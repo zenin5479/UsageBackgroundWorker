@@ -36,6 +36,7 @@
          AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          ClientSize = new System.Drawing.Size(681, 431);
          Name = "FormOne";
+         StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          Text = "Использование BackgroundWorker в Windows Forms";
          ResumeLayout(false);
       }
