@@ -30,13 +30,13 @@
       {
          SuspendLayout();
          // 
-         // Form1
+         // FormOne
          // 
          AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
          AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          ClientSize = new System.Drawing.Size(681, 431);
-         Name = "Form1";
-         Text = "Form1";
+         Name = "FormOne";
+         Text = "Использование BackgroundWorker в Windows Forms";
          ResumeLayout(false);
       }
 
