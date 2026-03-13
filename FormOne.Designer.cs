@@ -28,13 +28,24 @@
       /// </summary>
       private void InitializeComponent()
       {
+         startButton = new System.Windows.Forms.Button();
          SuspendLayout();
+         // 
+         // startButton
+         // 
+         startButton.Location = new System.Drawing.Point(53, 71);
+         startButton.Name = "startButton";
+         startButton.Size = new System.Drawing.Size(75, 23);
+         startButton.TabIndex = 0;
+         startButton.Text = "button1";
+         startButton.UseVisualStyleBackColor = true;
          // 
          // FormOne
          // 
          AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
          AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          ClientSize = new System.Drawing.Size(484, 361);
+         Controls.Add(startButton);
          Name = "FormOne";
          StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          Text = "Использование BackgroundWorker в Windows Forms";
@@ -42,5 +53,7 @@
       }
 
       #endregion
+
+      private System.Windows.Forms.Button startButton;
    }
 }
