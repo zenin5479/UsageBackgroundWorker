@@ -63,7 +63,7 @@
          // resultLabel
          // 
          resultLabel.AutoSize = true;
-         resultLabel.Location = new System.Drawing.Point(278, 263);
+         resultLabel.Location = new System.Drawing.Point(12, 96);
          resultLabel.Name = "resultLabel";
          resultLabel.Size = new System.Drawing.Size(78, 15);
          resultLabel.TabIndex = 3;
