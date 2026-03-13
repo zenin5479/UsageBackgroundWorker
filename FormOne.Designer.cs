@@ -47,7 +47,7 @@
          stopButton.Name = "stopButton";
          stopButton.Size = new System.Drawing.Size(114, 23);
          stopButton.TabIndex = 1;
-         stopButton.Text = "button1";
+         stopButton.Text = "Остановить расчёты";
          stopButton.UseVisualStyleBackColor = true;
          // 
          // FormOne
