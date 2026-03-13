@@ -46,7 +46,7 @@
          // 
          // stopButton
          // 
-         stopButton.Location = new System.Drawing.Point(80, 157);
+         stopButton.Location = new System.Drawing.Point(12, 41);
          stopButton.Name = "stopButton";
          stopButton.Size = new System.Drawing.Size(142, 23);
          stopButton.TabIndex = 1;
