@@ -45,7 +45,7 @@
          // 
          stopButton.Location = new System.Drawing.Point(80, 157);
          stopButton.Name = "stopButton";
-         stopButton.Size = new System.Drawing.Size(114, 23);
+         stopButton.Size = new System.Drawing.Size(142, 23);
          stopButton.TabIndex = 1;
          stopButton.Text = "Остановить расчёты";
          stopButton.UseVisualStyleBackColor = true;
