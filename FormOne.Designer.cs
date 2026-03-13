@@ -32,6 +32,7 @@
          stopButton = new System.Windows.Forms.Button();
          progressBar = new System.Windows.Forms.ProgressBar();
          resultLabel = new System.Windows.Forms.Label();
+         backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
          SuspendLayout();
          // 
          // startButton
@@ -90,5 +91,6 @@
       private System.Windows.Forms.Button stopButton;
       private System.Windows.Forms.ProgressBar progressBar;
       private System.Windows.Forms.Label resultLabel;
+      private System.ComponentModel.BackgroundWorker backgroundWorker1;
    }
 }
