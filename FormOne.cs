@@ -12,13 +12,13 @@ namespace UsageBackgroundWorker
          InitializeComponent();
 
          // Настройка BackgroundWorker
-         backgroundWorker1.WorkerReportsProgress = true;
-         backgroundWorker1.WorkerSupportsCancellation = true;
+         BackgroundWorkerOne.WorkerReportsProgress = true;
+         BackgroundWorkerOne.WorkerSupportsCancellation = true;
 
          // Подписка на события
-         backgroundWorker1.DoWork += BackgroundWorker1_DoWork;
-         backgroundWorker1.ProgressChanged += BackgroundWorker1_ProgressChanged;
-         backgroundWorker1.RunWorkerCompleted += BackgroundWorker1_RunWorkerCompleted;
+         BackgroundWorkerOne.DoWork += BackgroundWorker1_DoWork;
+         BackgroundWorkerOne.ProgressChanged += BackgroundWorker1_ProgressChanged;
+         BackgroundWorkerOne.RunWorkerCompleted += BackgroundWorker1_RunWorkerCompleted;
       }
 
       private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
@@ -47,41 +47,41 @@ namespace UsageBackgroundWorker
       {
          // Обновление интерфейса из основного потока
          double result = (double)e.UserState;
-         resultLabel.Text = string.Format("Результат: {0:F2}", result);
-         progressBar.Increment(1);
+         ResultLabel.Text = string.Format("Результат: {0:F2}", result);
+         ProgressBarOne.Increment(1);
       }
 
       private void BackgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
       {
          // Восстановление состояния кнопок
-         startButton.Enabled = true;
-         stopButton.Enabled = false;
+         StartButton.Enabled = true;
+         StopButton.Enabled = false;
 
          if (e.Cancelled)
          {
-            resultLabel.Text = "Расчёты остановлены";
+            ResultLabel.Text = "Расчёты остановлены";
          }
          else if (e.Error != null)
          {
-            resultLabel.Text = string.Format("Ошибка: {0}", e.Error.Message);
+            ResultLabel.Text = string.Format("Ошибка: {0}", e.Error.Message);
          }
       }
 
       private void startButton_Click(object sender, EventArgs e)
       {
-         if (!backgroundWorker1.IsBusy)
+         if (!BackgroundWorkerOne.IsBusy)
          {
-            backgroundWorker1.RunWorkerAsync();
-            startButton.Enabled = false;
-            stopButton.Enabled = true;
+            BackgroundWorkerOne.RunWorkerAsync();
+            StartButton.Enabled = false;
+            StopButton.Enabled = true;
          }
       }
 
       private void stopButton_Click(object sender, EventArgs e)
       {
-         if (backgroundWorker1.IsBusy)
+         if (BackgroundWorkerOne.IsBusy)
          {
-            backgroundWorker1.CancelAsync();
+            BackgroundWorkerOne.CancelAsync();
          }
       }
    }

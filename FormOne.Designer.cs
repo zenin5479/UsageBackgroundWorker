@@ -28,63 +28,63 @@
       /// </summary>
       private void InitializeComponent()
       {
-         startButton = new System.Windows.Forms.Button();
-         stopButton = new System.Windows.Forms.Button();
-         progressBar = new System.Windows.Forms.ProgressBar();
-         resultLabel = new System.Windows.Forms.Label();
-         backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+         StartButton = new System.Windows.Forms.Button();
+         StopButton = new System.Windows.Forms.Button();
+         ProgressBarOne = new System.Windows.Forms.ProgressBar();
+         ResultLabel = new System.Windows.Forms.Label();
+         BackgroundWorkerOne = new System.ComponentModel.BackgroundWorker();
          SuspendLayout();
          // 
-         // startButton
+         // StartButton
          // 
-         startButton.Location = new System.Drawing.Point(12, 12);
-         startButton.Name = "startButton";
-         startButton.Size = new System.Drawing.Size(150, 23);
-         startButton.TabIndex = 0;
-         startButton.Text = "Запустить расчёты";
-         startButton.UseVisualStyleBackColor = true;
-         startButton.Click += startButton_Click;
+         StartButton.Location = new System.Drawing.Point(12, 12);
+         StartButton.Name = "StartButton";
+         StartButton.Size = new System.Drawing.Size(150, 23);
+         StartButton.TabIndex = 0;
+         StartButton.Text = "Запустить расчёты";
+         StartButton.UseVisualStyleBackColor = true;
+         StartButton.Click += startButton_Click;
          // 
-         // stopButton
+         // StopButton
          // 
-         stopButton.Location = new System.Drawing.Point(12, 41);
-         stopButton.Name = "stopButton";
-         stopButton.Size = new System.Drawing.Size(150, 23);
-         stopButton.TabIndex = 1;
-         stopButton.Text = "Остановить расчёты";
-         stopButton.UseVisualStyleBackColor = true;
-         stopButton.Click += stopButton_Click;
+         StopButton.Location = new System.Drawing.Point(12, 41);
+         StopButton.Name = "StopButton";
+         StopButton.Size = new System.Drawing.Size(150, 23);
+         StopButton.TabIndex = 1;
+         StopButton.Text = "Остановить расчёты";
+         StopButton.UseVisualStyleBackColor = true;
+         StopButton.Click += stopButton_Click;
          // 
-         // progressBar
+         // ProgressBarOne
          // 
-         progressBar.Location = new System.Drawing.Point(168, 12);
-         progressBar.Name = "progressBar";
-         progressBar.Size = new System.Drawing.Size(250, 23);
-         progressBar.TabIndex = 2;
+         ProgressBarOne.Location = new System.Drawing.Point(168, 12);
+         ProgressBarOne.Name = "ProgressBarOne";
+         ProgressBarOne.Size = new System.Drawing.Size(250, 23);
+         ProgressBarOne.TabIndex = 2;
          // 
-         // resultLabel
+         // ResultLabel
          // 
-         resultLabel.AutoSize = true;
-         resultLabel.Location = new System.Drawing.Point(12, 67);
-         resultLabel.Name = "resultLabel";
-         resultLabel.Size = new System.Drawing.Size(78, 15);
-         resultLabel.TabIndex = 3;
-         resultLabel.Text = "Результат: —";
+         ResultLabel.AutoSize = true;
+         ResultLabel.Location = new System.Drawing.Point(12, 67);
+         ResultLabel.Name = "ResultLabel";
+         ResultLabel.Size = new System.Drawing.Size(78, 15);
+         ResultLabel.TabIndex = 3;
+         ResultLabel.Text = "Результат: —";
          // 
-         // backgroundWorker1
+         // BackgroundWorkerOne
          // 
-         backgroundWorker1.WorkerReportsProgress = true;
-         backgroundWorker1.WorkerSupportsCancellation = true;
+         BackgroundWorkerOne.WorkerReportsProgress = true;
+         BackgroundWorkerOne.WorkerSupportsCancellation = true;
          // 
          // FormOne
          // 
          AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
          AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          ClientSize = new System.Drawing.Size(431, 102);
-         Controls.Add(resultLabel);
-         Controls.Add(progressBar);
-         Controls.Add(stopButton);
-         Controls.Add(startButton);
+         Controls.Add(ResultLabel);
+         Controls.Add(ProgressBarOne);
+         Controls.Add(StopButton);
+         Controls.Add(StartButton);
          Name = "FormOne";
          StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
          Text = "Использование BackgroundWorker в Windows Forms";
@@ -94,10 +94,10 @@
 
       #endregion
 
-      private System.Windows.Forms.Button startButton;
-      private System.Windows.Forms.Button stopButton;
-      private System.Windows.Forms.ProgressBar progressBar;
-      private System.Windows.Forms.Label resultLabel;
-      private System.ComponentModel.BackgroundWorker backgroundWorker1;
+      private System.Windows.Forms.Button StartButton;
+      private System.Windows.Forms.Button StopButton;
+      private System.Windows.Forms.ProgressBar ProgressBarOne;
+      private System.Windows.Forms.Label ResultLabel;
+      private System.ComponentModel.BackgroundWorker BackgroundWorkerOne;
    }
 }
