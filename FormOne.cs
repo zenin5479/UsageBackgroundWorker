@@ -13,7 +13,6 @@ namespace UsageBackgroundWorker
 
          // Подписка на события
          backgroundWorker1.DoWork += BackgroundWorker1_DoWork;
-         backgroundWorker1.ProgressChanged += BackgroundWorker1_ProgressChanged;
          backgroundWorker1.RunWorkerCompleted += BackgroundWorker1_RunWorkerCompleted;
       }
 
@@ -33,18 +32,13 @@ namespace UsageBackgroundWorker
 
             // Пауза для демонстрации работы
             Thread.Sleep(200);
+
+            // Обновление интерфейса из основного потока
+            resultLabel.Text = string.Format("Результат: {0:F2}", result);
          }
 
          // Указываем, что работа отменена
          e.Cancel = true;
-      }
-
-      private void BackgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
-      {
-         // Обновление интерфейса из основного потока
-         double result = (double)e.UserState;
-         resultLabel.Text = string.Format("Результат: {0:F2}", result);
-         progressBar.Increment(1);
       }
 
       private void BackgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -70,6 +64,9 @@ namespace UsageBackgroundWorker
             backgroundWorker1.RunWorkerAsync();
             startButton.Enabled = false;
             stopButton.Enabled = true;
+            
+          
+
          }
       }
 
