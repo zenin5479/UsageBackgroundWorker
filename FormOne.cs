@@ -40,7 +40,7 @@ namespace UsageBackgroundWorker
          }
 
          // Указываем, что работа отменена
-         e.Cancel = true; 
+         e.Cancel = true;
       }
 
       private void BackgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
