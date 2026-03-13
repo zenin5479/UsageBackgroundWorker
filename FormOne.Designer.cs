@@ -71,6 +71,11 @@
          resultLabel.TabIndex = 3;
          resultLabel.Text = "Результат: —";
          // 
+         // backgroundWorker1
+         // 
+         backgroundWorker1.WorkerReportsProgress = true;
+         backgroundWorker1.WorkerSupportsCancellation = true;
+         // 
          // FormOne
          // 
          AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);

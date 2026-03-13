@@ -12,8 +12,8 @@ namespace UsageBackgroundWorker
          InitializeComponent();
 
          // Настройка BackgroundWorker
-         backgroundWorker1.WorkerReportsProgress = true;
-         backgroundWorker1.WorkerSupportsCancellation = true;
+         //backgroundWorker1.WorkerReportsProgress = true;
+         //backgroundWorker1.WorkerSupportsCancellation = true;
 
          // Подписка на события
          backgroundWorker1.DoWork += BackgroundWorker1_DoWork;
