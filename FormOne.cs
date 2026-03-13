@@ -47,7 +47,7 @@ namespace UsageBackgroundWorker
       {
          // Обновление интерфейса из основного потока
          double result = (double)e.UserState;
-         resultLabel.Text = $"Результат: {result:F2}";
+         resultLabel.Text = string.Format("Результат: {0:F2}", result);
          progressBar.Increment(1);
       }
 
