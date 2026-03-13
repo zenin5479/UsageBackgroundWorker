@@ -7,108 +7,81 @@ namespace UsageBackgroundWorker
 {
    public partial class FormOne : Form
    {
-      private BackgroundWorker backgroundWorker;
-      private int iterationCount = 0;
-
       public FormOne()
       {
          InitializeComponent();
 
-         InitializeBackgroundWorker();
+         // Настройка BackgroundWorker
+         backgroundWorker1.WorkerReportsProgress = true;
+         backgroundWorker1.WorkerSupportsCancellation = true;
+
          // Подписка на события
-         //backgroundWorker1.DoWork += BackgroundWorker1_DoWork;
-         //backgroundWorker1.RunWorkerCompleted += BackgroundWorker1_RunWorkerCompleted;
+         backgroundWorker1.DoWork += BackgroundWorker1_DoWork;
+         backgroundWorker1.ProgressChanged += BackgroundWorker1_ProgressChanged;
+         backgroundWorker1.RunWorkerCompleted += BackgroundWorker1_RunWorkerCompleted;
       }
 
-      private void InitializeBackgroundWorker()
-      {
-         backgroundWorker = new BackgroundWorker
-         {
-            WorkerReportsProgress = true,
-            WorkerSupportsCancellation = true
-         };
-
-         backgroundWorker.DoWork += BackgroundWorker_DoWork;
-         backgroundWorker.ProgressChanged += BackgroundWorker_ProgressChanged;
-         backgroundWorker.RunWorkerCompleted += BackgroundWorker_RunWorkerCompleted;
-      }
-
-      // Событие DoWork выполняется в фоновом потоке
-      private void BackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+      private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
       {
          BackgroundWorker worker = sender as BackgroundWorker;
+         int calculationCounter = 0;
 
-         // Бесконечный цикл, пока не запрошена отмена
          while (!worker.CancellationPending)
          {
-            // Имитация длительных вычислений (например, ресурсоёмкая операция)
-            // Здесь можно разместить любой код расчётов
-            iterationCount++;
+            // Имитация расчёта
+            double result = Math.Sin(calculationCounter * 0.1) * 100;
+            calculationCounter++;
 
-            // Сообщаем прогресс (передаём текущее значение счётчика)
-            worker.ReportProgress(0, iterationCount);
+            // Отчёт о прогрессе и передача результата
+            worker.ReportProgress(0, result);
 
-            // Небольшая задержка, чтобы не перегружать процессор и дать время на обработку отмены
-            // В реальном приложении вместо Sleep может быть реальная работа
+            // Пауза для демонстрации работы
             Thread.Sleep(100);
          }
 
-         // Если цикл прерван по отмене, устанавливаем флаг в e.Cancel
+         // Указываем, что работа отменена
          e.Cancel = true;
       }
 
-      // Событие ProgressChanged выполняется в потоке UI
-      private void BackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+      private void BackgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
       {
-         // Получаем переданное значение
-         int currentIteration = (int)e.UserState;
-         resultLabel.Text = $"Итераций: {currentIteration}";
+         // Обновление интерфейса из основного потока
+         double result = (double)e.UserState;
+         resultLabel.Text = string.Format("Результат: {0:F2}", result);
+         progressBar.Increment(1);
       }
 
-      // Событие RunWorkerCompleted выполняется в потоке UI после завершения DoWork
-      private void BackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+      private void BackgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
       {
+         // Восстановление состояния кнопок
+         startButton.Enabled = true;
+         stopButton.Enabled = false;
+
          if (e.Cancelled)
          {
-            MessageBox.Show("Расчёты остановлены пользователем.", "Отмена",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
+            resultLabel.Text = "Расчёты остановлены";
          }
          else if (e.Error != null)
          {
-            MessageBox.Show($"Ошибка: {e.Error.Message}", "Ошибка",
-                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            resultLabel.Text = string.Format("Ошибка: {0}", e.Error.Message);
          }
-         else
-         {
-            // Обычно сюда не попадём, так как цикл бесконечный и завершается только по отмене
-            MessageBox.Show("Расчёты завершены.", "Готово",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-         }
-
-         // Включаем кнопку Start, отключаем Stop
-         startButton.Enabled = true;
-         stopButton.Enabled = false;
       }
 
       private void startButton_Click(object sender, EventArgs e)
       {
-         if (!backgroundWorker.IsBusy)
+         if (!backgroundWorker1.IsBusy)
          {
-            iterationCount = 0; // Сброс счётчика
-            backgroundWorker.RunWorkerAsync();
-
+            backgroundWorker1.RunWorkerAsync();
             startButton.Enabled = false;
             stopButton.Enabled = true;
          }
-
       }
 
       private void stopButton_Click(object sender, EventArgs e)
       {
-         if (backgroundWorker.IsBusy)
+         if (backgroundWorker1.IsBusy)
          {
-            backgroundWorker.CancelAsync();
-            stopButton.Enabled = false;
+            backgroundWorker1.CancelAsync();
          }
       }
    }
