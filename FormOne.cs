@@ -82,7 +82,10 @@ namespace UsageBackgroundWorker
 
       private void stopButton_Click(object sender, EventArgs e)
       {
-
+         if (backgroundWorker1.IsBusy)
+         {
+            backgroundWorker1.CancelAsync();
+         }
       }
    }
 }
