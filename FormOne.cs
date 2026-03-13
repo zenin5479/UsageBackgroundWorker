@@ -16,14 +16,14 @@ namespace UsageBackgroundWorker
          BackgroundWorkerOne.WorkerSupportsCancellation = true;
 
          // Подписка на события
-         BackgroundWorkerOne.DoWork += BackgroundWorker1_DoWork;
-         BackgroundWorkerOne.ProgressChanged += BackgroundWorker1_ProgressChanged;
-         BackgroundWorkerOne.RunWorkerCompleted += BackgroundWorker1_RunWorkerCompleted;
+         BackgroundWorkerOne.DoWork += BackgroundWorkerOne_DoWork;
+         BackgroundWorkerOne.ProgressChanged += BackgroundWorkerOne_ProgressChanged;
+         BackgroundWorkerOne.RunWorkerCompleted += BackgroundWorkerOne_RunWorkerCompleted;
       }
 
-      private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+      private void BackgroundWorkerOne_DoWork(object sender, DoWorkEventArgs e)
       {
-         BackgroundWorker worker = sender as BackgroundWorker;
+         BackgroundWorker worker = (BackgroundWorker)sender;
          int calculationCounter = 0;
 
          while (!worker.CancellationPending)
@@ -43,7 +43,7 @@ namespace UsageBackgroundWorker
          e.Cancel = true;
       }
 
-      private void BackgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+      private void BackgroundWorkerOne_ProgressChanged(object sender, ProgressChangedEventArgs e)
       {
          // Обновление интерфейса из основного потока
          double result = (double)e.UserState;
@@ -51,7 +51,7 @@ namespace UsageBackgroundWorker
          ProgressBarOne.Increment(1);
       }
 
-      private void BackgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+      private void BackgroundWorkerOne_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
       {
          // Восстановление состояния кнопок
          StartButton.Enabled = true;
@@ -67,7 +67,7 @@ namespace UsageBackgroundWorker
          }
       }
 
-      private void startButton_Click(object sender, EventArgs e)
+      private void StartButton_Click(object sender, EventArgs e)
       {
          if (!BackgroundWorkerOne.IsBusy)
          {
@@ -77,7 +77,7 @@ namespace UsageBackgroundWorker
          }
       }
 
-      private void stopButton_Click(object sender, EventArgs e)
+      private void StopButton_Click(object sender, EventArgs e)
       {
          if (BackgroundWorkerOne.IsBusy)
          {
