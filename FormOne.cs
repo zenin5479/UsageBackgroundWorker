@@ -23,7 +23,7 @@ namespace UsageBackgroundWorker
 
       private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
       {
-         BackgroundWorker worker = sender as BackgroundWorker;
+         BackgroundWorker worker = (BackgroundWorker)sender;
          int calculationCounter = 0;
 
          while (!worker.CancellationPending)
