@@ -63,7 +63,7 @@
          // resultLabel
          // 
          resultLabel.AutoSize = true;
-         resultLabel.Location = new System.Drawing.Point(12, 96);
+         resultLabel.Location = new System.Drawing.Point(12, 67);
          resultLabel.Name = "resultLabel";
          resultLabel.Size = new System.Drawing.Size(78, 15);
          resultLabel.TabIndex = 3;
@@ -73,7 +73,7 @@
          // 
          AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
          AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         ClientSize = new System.Drawing.Size(484, 361);
+         ClientSize = new System.Drawing.Size(431, 110);
          Controls.Add(resultLabel);
          Controls.Add(progressBar);
          Controls.Add(stopButton);
