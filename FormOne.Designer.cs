@@ -30,6 +30,7 @@
       {
          startButton = new System.Windows.Forms.Button();
          stopButton = new System.Windows.Forms.Button();
+         progressBar1 = new System.Windows.Forms.ProgressBar();
          SuspendLayout();
          // 
          // startButton
@@ -50,11 +51,19 @@
          stopButton.Text = "Остановить расчёты";
          stopButton.UseVisualStyleBackColor = true;
          // 
+         // progressBar1
+         // 
+         progressBar1.Location = new System.Drawing.Point(97, 253);
+         progressBar1.Name = "progressBar1";
+         progressBar1.Size = new System.Drawing.Size(100, 23);
+         progressBar1.TabIndex = 2;
+         // 
          // FormOne
          // 
          AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
          AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          ClientSize = new System.Drawing.Size(484, 361);
+         Controls.Add(progressBar1);
          Controls.Add(stopButton);
          Controls.Add(startButton);
          Name = "FormOne";
@@ -67,5 +76,6 @@
 
       private System.Windows.Forms.Button startButton;
       private System.Windows.Forms.Button stopButton;
+      private System.Windows.Forms.ProgressBar progressBar1;
    }
 }
