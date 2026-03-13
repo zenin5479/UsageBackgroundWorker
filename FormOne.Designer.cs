@@ -39,7 +39,7 @@
          // 
          startButton.Location = new System.Drawing.Point(12, 12);
          startButton.Name = "startButton";
-         startButton.Size = new System.Drawing.Size(122, 23);
+         startButton.Size = new System.Drawing.Size(150, 23);
          startButton.TabIndex = 0;
          startButton.Text = "Запустить расчёты";
          startButton.UseVisualStyleBackColor = true;
