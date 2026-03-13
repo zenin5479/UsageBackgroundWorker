@@ -31,7 +31,7 @@
          startButton = new System.Windows.Forms.Button();
          stopButton = new System.Windows.Forms.Button();
          progressBar = new System.Windows.Forms.ProgressBar();
-         label1 = new System.Windows.Forms.Label();
+         resultLabel = new System.Windows.Forms.Label();
          SuspendLayout();
          // 
          // startButton
@@ -59,21 +59,21 @@
          progressBar.Size = new System.Drawing.Size(100, 23);
          progressBar.TabIndex = 2;
          // 
-         // label1
+         // resultLabel
          // 
-         label1.AutoSize = true;
-         label1.Location = new System.Drawing.Point(278, 263);
-         label1.Name = "label1";
-         label1.Size = new System.Drawing.Size(38, 15);
-         label1.TabIndex = 3;
-         label1.Text = "label1";
+         resultLabel.AutoSize = true;
+         resultLabel.Location = new System.Drawing.Point(278, 263);
+         resultLabel.Name = "resultLabel";
+         resultLabel.Size = new System.Drawing.Size(38, 15);
+         resultLabel.TabIndex = 3;
+         resultLabel.Text = "label1";
          // 
          // FormOne
          // 
          AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
          AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          ClientSize = new System.Drawing.Size(484, 361);
-         Controls.Add(label1);
+         Controls.Add(resultLabel);
          Controls.Add(progressBar);
          Controls.Add(stopButton);
          Controls.Add(startButton);
@@ -89,6 +89,6 @@
       private System.Windows.Forms.Button startButton;
       private System.Windows.Forms.Button stopButton;
       private System.Windows.Forms.ProgressBar progressBar;
-      private System.Windows.Forms.Label label1;
+      private System.Windows.Forms.Label resultLabel;
    }
 }
