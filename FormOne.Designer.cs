@@ -43,6 +43,7 @@
          startButton.TabIndex = 0;
          startButton.Text = "Запустить расчёты";
          startButton.UseVisualStyleBackColor = true;
+         startButton.Click += startButton_Click;
          // 
          // stopButton
          // 
@@ -52,6 +53,7 @@
          stopButton.TabIndex = 1;
          stopButton.Text = "Остановить расчёты";
          stopButton.UseVisualStyleBackColor = true;
+         stopButton.Click += stopButton_Click;
          // 
          // progressBar
          // 
