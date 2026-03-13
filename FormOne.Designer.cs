@@ -64,9 +64,9 @@
          resultLabel.AutoSize = true;
          resultLabel.Location = new System.Drawing.Point(278, 263);
          resultLabel.Name = "resultLabel";
-         resultLabel.Size = new System.Drawing.Size(38, 15);
+         resultLabel.Size = new System.Drawing.Size(78, 15);
          resultLabel.TabIndex = 3;
-         resultLabel.Text = "label1";
+         resultLabel.Text = "Результат: —";
          // 
          // FormOne
          // 
