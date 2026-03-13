@@ -37,7 +37,7 @@
          startButton.Name = "startButton";
          startButton.Size = new System.Drawing.Size(75, 23);
          startButton.TabIndex = 0;
-         startButton.Text = "button1";
+         startButton.Text = "Запустить расчёты";
          startButton.UseVisualStyleBackColor = true;
          // 
          // FormOne
