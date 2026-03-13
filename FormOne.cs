@@ -86,8 +86,8 @@ namespace UsageBackgroundWorker
          }
 
          // Включаем кнопку Start, отключаем Stop
-         buttonStart.Enabled = true;
-         buttonStop.Enabled = false;
+         startButton.Enabled = true;
+         stopButton.Enabled = false;
       }
 
       private void startButton_Click(object sender, EventArgs e)
@@ -97,8 +97,8 @@ namespace UsageBackgroundWorker
             iterationCount = 0; // Сброс счётчика
             backgroundWorker.RunWorkerAsync();
 
-            buttonStart.Enabled = false;
-            buttonStop.Enabled = true;
+            startButton.Enabled = false;
+            stopButton.Enabled = true;
          }
 
       }
@@ -108,7 +108,7 @@ namespace UsageBackgroundWorker
          if (backgroundWorker.IsBusy)
          {
             backgroundWorker.CancelAsync();
-            buttonStop.Enabled = false;
+            stopButton.Enabled = false;
          }
       }
    }
