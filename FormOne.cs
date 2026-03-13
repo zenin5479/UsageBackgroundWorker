@@ -72,7 +72,12 @@ namespace UsageBackgroundWorker
 
       private void startButton_Click(object sender, EventArgs e)
       {
-
+         if (!backgroundWorker1.IsBusy)
+         {
+            backgroundWorker1.RunWorkerAsync();
+            startButton.Enabled = false;
+            stopButton.Enabled = true;
+         }
       }
 
       private void stopButton_Click(object sender, EventArgs e)
