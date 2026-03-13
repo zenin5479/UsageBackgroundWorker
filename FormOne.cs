@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Threading;
 using System.Windows.Forms;
 
-
 namespace UsageBackgroundWorker
 {
    public partial class FormOne : Form
@@ -40,7 +39,8 @@ namespace UsageBackgroundWorker
             Thread.Sleep(100);
          }
 
-         e.Cancel = true; // Указываем, что работа отменена
+         // Указываем, что работа отменена
+         e.Cancel = true; 
       }
 
       private void BackgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
