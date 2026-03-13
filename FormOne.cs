@@ -23,6 +23,8 @@ namespace UsageBackgroundWorker
          backgroundWorker1.RunWorkerCompleted += BackgroundWorker1_RunWorkerCompleted;
       }
 
+
+
       private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
       {
          BackgroundWorker worker = sender as BackgroundWorker;
