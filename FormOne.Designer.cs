@@ -73,7 +73,7 @@
          // 
          AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
          AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-         ClientSize = new System.Drawing.Size(431, 110);
+         ClientSize = new System.Drawing.Size(431, 102);
          Controls.Add(resultLabel);
          Controls.Add(progressBar);
          Controls.Add(stopButton);
