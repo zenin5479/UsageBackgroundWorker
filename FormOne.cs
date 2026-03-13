@@ -36,7 +36,7 @@ namespace UsageBackgroundWorker
             worker.ReportProgress(0, result);
 
             // Пауза для демонстрации работы
-            Thread.Sleep(100);
+            Thread.Sleep(200);
          }
 
          // Указываем, что работа отменена
