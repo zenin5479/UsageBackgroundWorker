@@ -63,7 +63,7 @@ namespace UsageBackgroundWorker
          }
          else if (e.Error != null)
          {
-            resultLabel.Text = $"Ошибка: {e.Error.Message}";
+            resultLabel.Text = string.Format("Ошибка: {0}", e.Error.Message);
          }
       }
 
