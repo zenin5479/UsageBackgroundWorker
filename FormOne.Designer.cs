@@ -29,7 +29,7 @@
       private void InitializeComponent()
       {
          startButton = new System.Windows.Forms.Button();
-         button1 = new System.Windows.Forms.Button();
+         stopButton = new System.Windows.Forms.Button();
          SuspendLayout();
          // 
          // startButton
@@ -41,21 +41,21 @@
          startButton.Text = "Запустить расчёты";
          startButton.UseVisualStyleBackColor = true;
          // 
-         // button1
+         // stopButton
          // 
-         button1.Location = new System.Drawing.Point(80, 157);
-         button1.Name = "button1";
-         button1.Size = new System.Drawing.Size(114, 23);
-         button1.TabIndex = 1;
-         button1.Text = "button1";
-         button1.UseVisualStyleBackColor = true;
+         stopButton.Location = new System.Drawing.Point(80, 157);
+         stopButton.Name = "stopButton";
+         stopButton.Size = new System.Drawing.Size(114, 23);
+         stopButton.TabIndex = 1;
+         stopButton.Text = "button1";
+         stopButton.UseVisualStyleBackColor = true;
          // 
          // FormOne
          // 
          AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
          AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
          ClientSize = new System.Drawing.Size(484, 361);
-         Controls.Add(button1);
+         Controls.Add(stopButton);
          Controls.Add(startButton);
          Name = "FormOne";
          StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -66,6 +66,6 @@
       #endregion
 
       private System.Windows.Forms.Button startButton;
-      private System.Windows.Forms.Button button1;
+      private System.Windows.Forms.Button stopButton;
    }
 }
